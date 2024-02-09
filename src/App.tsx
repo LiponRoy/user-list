@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <div className=" h-screen w-full flex flex-col justify-center items-center">
+      <div className=" h-screen w-full flex flex-col justify-center items-center p-4">
         <span className=' text-4xl font-extrabold '>User list</span>
         <UserList />
       </div>

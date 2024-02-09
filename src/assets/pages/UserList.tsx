@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import Card from '../components/Card';
+
 
 const UserList = () => {
 
@@ -16,11 +18,13 @@ const UserList = () => {
     }, [])
 
     return (
-        <div>{user.users && user.users.map((value, index) => (
-            <div key={index} className=" flex flex-col justify-center items-center">
-                <span>{value.firstName}</span>
-            </div>
+
+        <div className="grid md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-4">{user.users && user.users.map((value: any, index: number) => (
+
+            <Card value={value} />
+
         ))}</div>
+
     )
 }
 
