@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import UserList from './assets/pages/UserList'
 
 function App() {
 
@@ -8,7 +9,7 @@ function App() {
     <>
       <div className=" h-screen w-full flex flex-col justify-center items-center">
         <span className=' text-4xl font-extrabold '>User list</span>
-        <span className=' text-2xl font-extrabold '>Project start</span>
+        <UserList />
       </div>
     </>
   )
