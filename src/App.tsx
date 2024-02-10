@@ -1,16 +1,21 @@
 import { useState } from 'react'
 import './App.css'
+import { Routes, Route } from "react-router-dom"
 import UserList from './assets/pages/UserList'
+import SingleUser from './assets/pages/SingleUser'
+import Navbar from './assets/components/Navbar'
 
 function App() {
 
 
   return (
     <>
-      <div className=" h-screen w-full flex flex-col justify-center items-center p-4">
-        <span className=' text-4xl font-extrabold '>User list</span>
-        <UserList />
-      </div>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<UserList />} />
+        <Route path="singleUser/:id" element={<SingleUser />} />
+        {/* <Route path="contact" element={<Contact />} /> */}
+      </Routes>
     </>
   )
 }

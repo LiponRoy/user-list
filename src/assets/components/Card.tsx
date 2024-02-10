@@ -1,10 +1,12 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const Card = ({ value }: any) => {
-    const { image, lastName, firstName, email, address, company } = value;
+    const navigate = useNavigate();
+    const { id, image, lastName, firstName, email, address, company } = value;
     return (
 
-        <div className=" border-2 rounded-md py-2 px-2 m-2 gap-y-4 hover:shadow-xl">
+        <div onClick={() => navigate(`/singleUser/${id}`)} className=" border-2 border-orange-400 rounded-md py-2 px-2 m-2 gap-y-4 hover:shadow-xl">
             <div className=' flex flex-col justify-center items-start cursor-pointer  '>
                 <img
                     className=' w-20 h-20 rounded-full'
