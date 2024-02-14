@@ -1,6 +1,4 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-
-interface User {
+export interface User {
     id: number;
     firstName: string;
     lastName: string;
@@ -67,31 +65,9 @@ interface User {
     };
 }
 
-interface UsersResponse {
+export interface UsersResponse {
     users: User[];
     total: number;
     skip: number;
     limit: number;
 }
-
-export const userApi = createApi({
-	reducerPath: 'userApi',
-	baseQuery: fetchBaseQuery({
-		baseUrl: 'https://dummyjson.com',
-	}),
-	tagTypes: ['user_tag'],
-
-	endpoints: (builder) => ({
-		getUsers: builder?.query<UsersResponse, void>({
-			query: () => '/users',
-			providesTags: ['user_tag'],
-		}),
-		userDetail: builder.query<User,string>({
-			query: (id) => `/users/${id}`,
-			providesTags: ['user_tag'],
-		}),
-	}),
-});
-
-// Export hooks for usage in components
-export const { useGetUsersQuery, useUserDetailQuery } = userApi;

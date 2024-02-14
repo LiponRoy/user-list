@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import { Routes, Route } from "react-router-dom"
 import UserList from './assets/pages/UserList'
@@ -13,7 +12,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<UserList />} />
-        <Route path="singleUser/:id" element={<SingleUser />} />
+        <Route path="/:id" element={<SingleUser />} />
         {/* <Route path="contact" element={<Contact />} /> */}
       </Routes>
     </>
